@@ -7,8 +7,9 @@ import Posts from '../../components/posts';
 const Page =   () => {
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box className='w-full flex justify-center items-center' sx={{ flexGrow: 1 }}>
     <Posts />
+    
     </Box>
   )
 }

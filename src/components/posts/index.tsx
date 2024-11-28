@@ -5,10 +5,12 @@ import { useQuery } from '@tanstack/react-query';
 
 import WarningAmberOutlinedIcon from '@mui/icons-material/WarningAmberOutlined';
 import React from 'react';
-import { Box } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import Loader from '../loader';
+import { useRouter } from 'next/navigation';
 
 const Posts = () => {
+  const router = useRouter()
     const { data:posts, isLoading, isSuccess } = useQuery({
         queryKey: ['posts'],
         queryFn: getPosts,
@@ -28,6 +30,11 @@ const Posts = () => {
           </li>
         ))}
       </ul>
+      <Button 
+    variant="outlined"
+    onClick={() => router.push('dashboard/test')}>
+      Dashboard
+    </Button>
     </div>
   );
 };
